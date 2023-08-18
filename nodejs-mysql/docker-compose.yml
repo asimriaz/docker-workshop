@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+    mysqldb:
+        image: mysql:5.7
+        restart: unless-stopped
+        environment:
+            - MYSQL_ROOT_PASSWORD=123456
+            - MYSQL_DATABASE=lms
+        volumes:
+            - ./:/docker-entrypoint-initdb.d
+
+    app:
+        image: node:16
+        working_dir: /usr/src/app
+        volumes:
+            - ./app:/usr/src/app
+        command: bash -c "npm install && npm start"
+        restart: unless-stopped
+        ports:
+            - 8090:8080
+        depends_on:
+            - mysqldb
+        environment:
+            - DB_HOST=mysqldb
+            - DB_USER=root
+            - DB_PASSWORD=123456
+            - DB_NAME=lms
+            - DB_PORT=3306
+        stdin_open: true
+        tty: true

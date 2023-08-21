@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+    vemulator:
+        container_name:   emulator
+        image: 'budtmo/docker-android:emulator_11.0'
+        ports:
+            - '6080:6080'
+            - '5555:5555'
+        environment:
+            - 'EMULATOR_DEVICE=Samsung Galaxy S7'
+            - WEB_VNC=true
+        devices:
+            - /dev/kvm
+        healthcheck:
+            test: 'cat /home/androidusr/device_status | grep "READY"'
+            interval: 5s
+            timeout: 5s
+            retries: 5            
+
+    #test:  ["CMD", "cat", "/home/androidusr/device_status", "|",  "grep", "READY"]
+    # seed:
+    #     image: mongo
+    #     container_name: seed
+    #     depends_on:
+    #         - mongodb
+    #     volumes:
+    #         - ./jsondata:/jsondata
+    #     command:
+    #         - /bin/bash
+    #         - -c
+    #         - |
+    #             mongoimport --jsonArray --uri "mongodb://mongodb:27017" -d recapsheet -c grades --file /jsondata/grades.json 
+    #             mongoimport --jsonArray --uri "mongodb://mongodb:27017" -d recapsheet -c marks --file /jsondata/marks.json 
+    #             mongoimport --jsonArray --uri "mongodb://mongodb:27017" -d recapsheet -c heads --file /jsondata/heads.json
+    #             mongoimport --jsonArray --uri "mongodb://mongodb:27017" -d recapsheet -c students --file /jsondata/students.json
+    
+    # app:
+    #     image: node:16
+    #     container_name: recapsheet
+    #     working_dir: /usr/src/app
+    #     volumes:
+    #         - ./app:/usr/src/app
+    #     command: bash -c "npm install && npm run start"
+    #     restart: unless-stopped
+    #     ports:
+    #         - 3000:3000
+    #         - 5000:5000
+    #     depends_on:
+    #         - mongodb
+    #     environment:
+    #         - DB_HOST=mongodb
+    #         - DB_NAME=recapsheet
+    #         - WATCHPACK_POLLING=true 
+    #     stdin_open: true
+    #     tty: true

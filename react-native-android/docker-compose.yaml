@@ -12,13 +12,46 @@ services:
             - WEB_VNC=true
         devices:
             - /dev/kvm
+        restart: unless-stopped
         healthcheck:
             test: 'cat /home/androidusr/device_status | grep "READY"'
-            interval: 5s
-            timeout: 5s
-            retries: 5            
+            interval: 20s
+            timeout: 10s
+            retries: 15   
+            start_period: 2ms         
 
-    #test:  ["CMD", "cat", "/home/androidusr/device_status", "|",  "grep", "READY"]
+
+    rn-app:
+        container_name: react-native
+        build:
+            context: ./app
+            dockerfile: Dockerfile
+        working_dir: /usr/src/app
+        volumes:
+            - ./app/src:/usr/src/app
+        restart: unless-stopped
+        ports:
+            - 3000:3000
+            - 5000:5000
+        command:
+            - /bin/bash
+            - -c
+            - |
+                npm install --legacy-peer-deps
+                /android/sdk/platform-tools/adb connect vemulator:5555
+                npm run android
+        depends_on:
+            - vemulator
+        environment:
+            - DB_HOST=mongodb
+            - DB_NAME=recapsheet
+            - WATCHPACK_POLLING=true 
+        stdin_open: true
+        tty: true
+
+
+
+    # test:  ["CMD", "cat", "/home/androidusr/device_status", "|",  "grep", "READY"]
     # seed:
     #     image: mongo
     #     container_name: seed
@@ -35,22 +68,7 @@ services:
     #             mongoimport --jsonArray --uri "mongodb://mongodb:27017" -d recapsheet -c heads --file /jsondata/heads.json
     #             mongoimport --jsonArray --uri "mongodb://mongodb:27017" -d recapsheet -c students --file /jsondata/students.json
     
-    # app:
-    #     image: node:16
-    #     container_name: recapsheet
-    #     working_dir: /usr/src/app
-    #     volumes:
-    #         - ./app:/usr/src/app
-    #     command: bash -c "npm install && npm run start"
-    #     restart: unless-stopped
-    #     ports:
-    #         - 3000:3000
-    #         - 5000:5000
-    #     depends_on:
-    #         - mongodb
-    #     environment:
-    #         - DB_HOST=mongodb
-    #         - DB_NAME=recapsheet
-    #         - WATCHPACK_POLLING=true 
-    #     stdin_open: true
-    #     tty: true
+
+
+
+    # docker run -d -p 6080:6080 -e EMULATOR_DEVICE="Samsung Galaxy S7" -e WEB_VNC=true --device /dev/kvm --name android-container budtmo/docker-android:emulator_11.0

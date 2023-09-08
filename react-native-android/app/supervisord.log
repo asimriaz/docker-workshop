@@ -1,0 +1,58 @@
+2023-09-07 16:52:22,340 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-09-07 16:52:22,342 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-09-07 16:52:22,347 INFO supervisord started with pid 21
+2023-09-07 16:52:22,347 INFO supervisord started with pid 19
+2023-09-07 16:52:22,347 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-09-07 16:52:22,350 INFO supervisord started with pid 20
+2023-09-07 16:52:23,348 INFO spawned: 'appium' with pid 23
+2023-09-07 16:52:23,348 INFO spawned: 'tigervncserver' with pid 22
+2023-09-07 16:52:23,350 INFO spawned: 'tint2' with pid 24
+2023-09-07 16:52:23,351 INFO spawned: 'novnc_proxy' with pid 25
+2023-09-07 16:52:23,352 INFO spawned: 'emulator' with pid 26
+2023-09-07 16:52:23,354 INFO spawned: 'metro' with pid 27
+2023-09-07 16:52:23,355 INFO spawned: 'reactnative' with pid 28
+2023-09-07 16:52:24,349 INFO success: appium entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-07 16:52:24,425 INFO success: emulator entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-07 16:52:25,185 INFO success: tigervncserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-07 16:52:25,185 INFO success: tint2 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-07 16:52:25,185 INFO success: novnc_proxy entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-07 16:52:26,005 INFO exited: tint2 (exit status 1; not expected)
+2023-09-07 16:52:26,290 INFO spawned: 'tint2' with pid 53
+2023-09-07 16:52:26,301 INFO exited: tint2 (exit status 1; not expected)
+2023-09-07 16:52:27,255 INFO exited: appium (exit status 1; not expected)
+2023-09-07 16:52:27,697 INFO spawned: 'tint2' with pid 73
+2023-09-07 16:52:28,257 INFO spawned: 'appium' with pid 74
+2023-09-07 16:52:28,708 INFO success: tint2 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-07 16:52:29,259 INFO success: appium entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-07 16:52:59,350 INFO success: metro entered RUNNING state, process has stayed up for > than 35 seconds (startsecs)
+2023-09-07 16:53:08,841 INFO success: reactnative entered RUNNING state, process has stayed up for > than 45 seconds (startsecs)
+2023-09-07 16:54:36,909 INFO exited: reactnative (exit status 0; expected)
+2023-09-07 17:13:50,463 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-09-07 17:13:50,466 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-09-07 17:13:50,469 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2023-09-07 17:13:50,470 INFO supervisord started with pid 21
+2023-09-07 17:13:50,471 INFO supervisord started with pid 19
+2023-09-07 17:13:50,472 INFO supervisord started with pid 20
+2023-09-07 17:13:51,473 INFO spawned: 'tigervncserver' with pid 22
+2023-09-07 17:13:51,473 INFO spawned: 'appium' with pid 23
+2023-09-07 17:13:51,475 INFO spawned: 'tint2' with pid 24
+2023-09-07 17:13:51,476 INFO spawned: 'emulator' with pid 25
+2023-09-07 17:13:51,477 INFO spawned: 'metro' with pid 26
+2023-09-07 17:13:51,478 INFO spawned: 'reactnative' with pid 27
+2023-09-07 17:13:51,484 INFO spawned: 'novnc_proxy' with pid 28
+2023-09-07 17:13:51,506 INFO exited: appium (exit status 1; not expected)
+2023-09-07 17:13:51,629 INFO exited: tint2 (exit status 1; not expected)
+2023-09-07 17:13:52,507 INFO spawned: 'appium' with pid 46
+2023-09-07 17:13:52,524 INFO exited: appium (exit status 1; not expected)
+2023-09-07 17:13:52,629 INFO success: tigervncserver entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-07 17:13:52,631 INFO spawned: 'tint2' with pid 53
+2023-09-07 17:13:52,631 INFO success: novnc_proxy entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-07 17:13:52,643 INFO exited: tint2 (exit status 1; not expected)
+2023-09-07 17:13:52,704 INFO success: emulator entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-07 17:13:54,528 INFO spawned: 'appium' with pid 120
+2023-09-07 17:13:55,116 INFO spawned: 'tint2' with pid 177
+2023-09-07 17:13:55,704 INFO success: appium entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-07 17:13:56,425 INFO success: tint2 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2023-09-07 17:14:26,647 INFO success: metro entered RUNNING state, process has stayed up for > than 35 seconds (startsecs)
+2023-09-07 17:14:36,650 INFO success: reactnative entered RUNNING state, process has stayed up for > than 45 seconds (startsecs)
+2023-09-07 17:15:10,463 INFO exited: reactnative (exit status 0; expected)
